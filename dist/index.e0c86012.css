@@ -1,0 +1,105 @@
+:root {
+  --color--primary: #475F45;
+  --color--secondary: #343D33;
+  --color--third: #414840;
+  --color--light: #ffffff;
+
+  --ff-sans-serif : 'Inter', sans-serif;
+  --ff-serif : 'Libre Baskerville', serif;
+}
+
+body {
+  font-family: var(--ff-sans-serif);
+}
+
+/*
+ UTILS
+*/
+
+*{
+  outline: 1px dotted rgba(255, 0, 0, 0.349);
+}
+
+.d-none {
+  display: none;
+}
+
+/*
+ LAYOUT
+*/
+
+.container{
+  width: min(100%, 1024px);
+  margin-inline: auto;
+}
+
+/*
+ NAVIGATION
+*/
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+  margin-bottom: 4rem;
+}
+
+.nav-wrapper {
+  position: absolute;
+  top: 0;
+  left : 0;
+  background-color: var(--color--primary);
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background-image: url(branch_dark.1e8faf6e.svg);
+  background-repeat: no-repeat;
+  background-position: 150% 120%;
+}
+
+.nav-items{
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item{
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.nav-link {
+  padding: 15px 30px;
+  text-decoration: none;
+  color: var(--color--light);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.btn{
+   border: 1px solid var(--color--light);
+   padding: 15px 30px;
+ }
+
+
+
+/*# sourceMappingURL=index.e0c86012.css.map */
