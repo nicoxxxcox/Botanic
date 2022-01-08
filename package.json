@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "source": "src/index.js",
   "scripts": {
-    "start": "parcel public/index.html",
+    "start": "parcel --no-cache public/index.html",
     "build": "parcel build public/index.html"
   },
   "repository": {
@@ -19,7 +19,7 @@
     "url": "https://github.com/nicoxxxcox/Botanic/issues"
   },
   "homepage": "https://github.com/nicoxxxcox/Botanic#readme",
-  "devDependencies": {
-    "parcel": "^2.0.1"
+  "dependencies": {
+    "parcel": "^2.1.1"
   }
 }
