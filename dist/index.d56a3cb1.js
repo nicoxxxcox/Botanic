@@ -459,6 +459,12 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"5HwUs":[function(require,module,exports) {
+const burgerIcon = document.querySelector(".burger-icon");
+const navWrapper = document.querySelector(".nav-wrapper");
+navWrapper.classList.remove('mobile-expanded');
+burgerIcon.addEventListener('click', function() {
+    navWrapper.classList.toggle('mobile-expanded');
+});
 
 },{}]},["1Mq12","5HwUs"], "5HwUs", "parcelRequire6496")
 

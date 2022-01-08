@@ -55,15 +55,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
+
+  cursor: pointer;
 
   padding: 1rem;
-  margin-bottom: 4rem;
 }
 
 .nav-wrapper {
   position: absolute;
-  top: 0;
   left : 0;
+  top: 0;
+  padding: 2rem 0;
+
   background-color: var(--color--primary);
   width: 100vw;
   height: 100vh;
@@ -71,9 +75,18 @@ body {
   display: flex;
   flex-direction: column;
 
+
+  transform: translate(2000px);
+  transition: transform 600ms ease-in-out;
+
+
   background-image: url(../public/images/branch_dark.svg);
   background-repeat: no-repeat;
-  background-position: 150% 120%;
+  background-position: right bottom;
+}
+
+.mobile-expanded {
+  transform: translate(0);
 }
 
 .nav-items{
@@ -95,6 +108,12 @@ body {
   color: var(--color--light);
   font-size: 14px;
   text-transform: uppercase;
+}
+
+.mobile-item{
+  font-family: var(--ff-serif);
+  font-size: 2rem;
+  margin-bottom: 3rem;
 }
 
 .btn{
