@@ -4,9 +4,10 @@
   --color--secondary: #343d33;
   --color--third: #414840;
   --color--light: #ffffff;
-
   --ff-sans-serif: "Inter", sans-serif;
   --ff-serif: "Libre Baskerville", serif;
+  --container-padding: 20px;
+  --container-width: calc(100vw - var(--container-padding) * 2);
 }
 
 body {
@@ -14,11 +15,11 @@ body {
 }
 
 /*
- UTILS
+ UTILS =========================================
 */
 
 * {
-  outline: 1px dotted rgba(255, 0, 0, 0.349);
+  outline: 1px dotted rgba(255, 0, 0, .349);
 }
 
 .d-none {
@@ -26,141 +27,7 @@ body {
 }
 
 /*
- LAYOUT
-*/
-
-.container {
-  width: min(100%, 1400px);
-  margin-inline: auto;
-}
-
-.hero--content,.hero--image {
-  margin: 2rem 0;
-}
-
-/*
- BUTTONS
-*/
-
-.btn {
-  padding: 15px 30px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 0.875rem;
-  text-align: center;
-}
-
-.btn-primary {
-  outline: 3px solid var(--color--primary);
-  background: var(--color--primary);
-  color: var(--color--light);
-  transition: background-color 200ms , outline 200ms ;
-}
-
-.btn-primary:hover{
-  background: var(--color--secondary);
-  outline: 3px solid var(--color--secondary);
-}
-
-.btn-primary-outline {
-  outline: 3px solid var(--color--primary);
-  color: var(--color--primary);
-  transition: background-color 200ms , outline 200ms ;
-}
-
-.btn-primary-outline:hover{
-  background: var(--color--secondary);
-  outline: 3px solid var(--color--secondary);
-}
-
-.btn-light {
-  outline: 3px solid var(--color--light);
-}
-
-/*
- NAVIGATION
-*/
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.burger-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-
-  cursor: pointer;
-
-  padding: 1rem;
-  mix-blend-mode: screen;
-}
-
-.nav-wrapper {
-  position: absolute;
-  left: 0;
-  top: 0;
-  padding: 2rem 0;
-
-  background-color: var(--color--primary);
-  width: 100vw;
-  height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-
-  transform: translateX(105%);
-  transition: transform 400ms ease-in-out;
-
-  background-image: url(branch_dark.1e8faf6e.svg);
-  background-repeat: no-repeat;
-  background-position: right bottom;
-}
-
-.mobile-expanded {
-  transform: translateX(0);
-}
-
-.nav-items {
-  display: flex;
-  flex-direction: column;
-}
-
-.nav-item {
-  text-align: center;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-}
-
-.nav-link {
-  padding: 15px 30px;
-  text-decoration: none;
-  color: var(--color--light);
-  font-size: 14px;
-  text-transform: uppercase;
-}
-
-.mobile-item {
-  font-family: var(--ff-serif);
-  font-size: 2rem;
-  margin-bottom: 3rem;
-}
-
-/*
-TYPOGRAPHY
+TYPOGRAPHY =========================================
 */
 
 .text-6xl {
@@ -196,11 +63,172 @@ TYPOGRAPHY
 }
 
 .text-sm {
-  font-size: 0.875rem;
+  font-size: .875rem;
 }
 
 .text-xs {
-  font-size: 0.75rem;
+  font-size: .75rem;
+}
+
+/*
+ LAYOUT =========================================
+*/
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: calc(50% - var(--container-width) / 2);
+  padding-right: calc(50% - var(--container-width) / 2);
+}
+
+section {
+  padding: 2rem 0;
+}
+
+/*
+IMAGES =========================================
+*/
+
+.img-responsive {
+  width: 100%;
+}
+
+/*
+ BUTTONS =========================================
+*/
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  padding: 15px 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: .875rem;
+  text-align: center;
+}
+
+.btn-primary {
+  outline: 3px solid var(--color--primary);
+  background: var(--color--primary);
+  color: var(--color--light);
+  transition: background-color 200ms , outline 200ms ;
+}
+
+.btn-primary:hover {
+  background: var(--color--secondary);
+  outline: 3px solid var(--color--secondary);
+}
+
+.btn-primary-outline {
+  outline: 3px solid var(--color--primary);
+  color: var(--color--primary);
+  transition: background-color 200ms , outline 200ms ;
+}
+
+.btn-primary-outline:hover {
+  background: var(--color--secondary);
+  outline: 3px solid var(--color--secondary);
+}
+
+.btn-light {
+  outline: 3px solid var(--color--light);
+}
+
+/*
+ NAVIGATION =========================================
+*/
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  cursor: pointer;
+  padding: 1rem;
+  mix-blend-mode: screen;
+}
+
+.nav-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 2rem 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 150ms, background-color 200ms;
+  opacity: 0;
+  background-color: none;
+  background-image: url(branch_dark.1e8faf6e.svg);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+
+.is-open {
+  background-color: var(--color--primary);
+  opacity: 1;
+}
+
+.nav-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item {
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-link {
+  padding: 15px 30px;
+  text-decoration: none;
+  color: var(--color--light);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.mobile-item {
+  font-family: var(--ff-serif);
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+/*
+HERO =========================================
+*/
+
+.hero--content, .hero--image {
+  margin: 2rem 0;
+}
+
+.hero--cta {
+  display: flex;
+  justify-content: center;
+}
+
+.hero--cta > .btn {
+  margin-right: 1rem;
 }
 
 .hero--title {
@@ -221,21 +249,42 @@ TYPOGRAPHY
   margin-bottom: 2rem;
 }
 
-.hero--cta {
-  display: flex;
-  justify-content: center;
-}
-
-.hero--cta > .btn {
-  margin-right: 1rem;
-}
-
 /*
-SECTIONS
+MAIN =========================================
 */
 
-section {
-  padding: 2rem 0;
+.main {
+  background: var(--color--secondary);
+}
+
+.main-presentation--image1 {
+
+  margin-bottom: 3rem;
+
+}
+
+.main-presentation--image2 {
+
+  margin-bottom: 2rem;
+
+}
+
+.main--title {
+  font-family: var(--ff-serif);
+  color: var(--color--light);
+  text-align: center;
+  font-weight: 400;
+  font-size: clamp(2.25rem, 5vw, 2.8125rem);
+  margin-bottom: 1rem;
+}
+
+.main--body {
+  font-family: var(--ff-sans-serif);
+  color: var(--color--light);
+  text-align: center;
+  font-weight: 400;
+  font-size: clamp(1rem, 5vw, 1.25rem);
+  margin-bottom: 1rem;
 }
 
 .hero--image {
@@ -251,10 +300,19 @@ section {
 }
 
 /*
-MEDIA 1024 -----------------------
+MEDIA 1024 =========================================
 */
 
 @media (min-width: 1024px) {
+  :root {
+    --container-width: 1004px;
+  }
+
+  .btn-wrapper {
+    justify-content: flex-start;
+  }
+
+
   .hero--title {
     text-align: left;
   }
@@ -266,15 +324,16 @@ MEDIA 1024 -----------------------
   .burger-icon {
     display: none;
   }
+
   .nav-wrapper {
     position: static;
-    transform: translate(0);
     display: flex;
     flex-direction: row;
     width: auto;
     height: auto;
     padding: 0;
     background: none;
+    opacity: 1;
   }
 
   .nav-items {
@@ -298,16 +357,47 @@ MEDIA 1024 -----------------------
     padding: 6.25rem 0;
   }
 
-  .grid {
+  .hero {
     display: grid;
-  }
-  .grid.hero {
     grid-template-columns: 1fr 1fr;
   }
 
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .main-presentation--image1 {
+    grid-column: span 2;
+    grid-row-start: 1;
+  }
+
+  .main-presentation--image2 {
+    grid-column: span 4;
+  }
+
+  .main-presentation--content {
+    grid-column: span 2;
+    grid-row-start: 1;
+
+    padding-inline : 2rem
+  }
+
+
+  .main--title {
+  text-align: left;
+  }
+
+  .main--body {
+  text-align: left;
+  }
+
+
+
+
   .btn {
     padding: 20px 40px;
-    font-size: 0.875rem;
+    font-size: .875rem;
   }
 
   .hero--cta {

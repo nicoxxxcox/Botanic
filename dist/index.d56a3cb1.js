@@ -521,9 +521,9 @@ function hmrAcceptRun(bundle, id) {
 },{}],"5HwUs":[function(require,module,exports) {
 const burgerIcon = document.querySelector(".burger-icon");
 const navWrapper = document.querySelector(".nav-wrapper");
-navWrapper.classList.remove('mobile-expanded');
+navWrapper.classList.remove('is-open');
 burgerIcon.addEventListener('click', function() {
-    navWrapper.classList.toggle('mobile-expanded');
+    navWrapper.classList.toggle('is-open');
 });
 
 },{}]},["3KXv7","5HwUs"], "5HwUs", "parcelRequire6496")
