@@ -177,7 +177,7 @@ IMAGES =========================================
   transition: opacity 150ms, background-color 200ms;
   opacity: 0;
   background-color: none;
-  background-image: url(../public/images/branch_dark.svg);
+  background-image: url(images/branch_dark.svg);
   background-repeat: no-repeat;
   background-position: right bottom;
 }
