@@ -166,14 +166,17 @@ IMAGES =========================================
 }
 
 .nav-wrapper {
-  position: absolute;
+  position: fixed;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  grid-template-columns: 1fr;
   left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
   top: 0;
   padding: 2rem 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
   transition: opacity 150ms, background-color 200ms;
   opacity: 0;
   background-color: none;
