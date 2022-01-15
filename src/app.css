@@ -11,7 +11,7 @@
   --container-width: calc(100vw - var(--container-padding) * 2);
 }
 
-body {
+body,* {
   font-family: var(--ff-sans-serif);
 }
 
@@ -19,9 +19,9 @@ body {
  UTILS =========================================
 */
 
-* {
+/* * {
   outline: 1px dotted rgba(255, 0, 0, .349);
-}
+} */
 
 .d-none {
   display: none;
@@ -30,46 +30,6 @@ body {
 /*
 TYPOGRAPHY =========================================
 */
-
-.text-6xl {
-  font-size: 4rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-}
-
-.text-base {
-  font-size: 1rem;
-}
-
-.text-sm {
-  font-size: .875rem;
-}
-
-.text-xs {
-  font-size: .75rem;
-}
 
 /*
  LAYOUT =========================================
@@ -104,16 +64,25 @@ IMAGES =========================================
 }
 
 .btn {
-  padding: 15px 30px;
-  text-decoration: none;
   text-transform: uppercase;
   font-weight: 600;
   font-size: .875rem;
-  text-align: center;
+  text-decoration: none !important;
+  padding: 15px 35px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 1px 2px rgba(36,57,141,.4);
+  line-height: 1.6;
+  color: #fff;
+  cursor: pointer;
+  transition: filter .3s,background .3s,color .3s;
+  filter: brightness(1);
+  white-space: nowrap;
 }
 
 .btn-primary {
-  outline: 3px solid var(--color--primary);
+  outline: 2px solid var(--color--primary);
   background: var(--color--primary);
   color: var(--color--light);
   transition: background-color 200ms , outline 200ms ;
@@ -121,29 +90,30 @@ IMAGES =========================================
 
 .btn-primary:hover {
   background: var(--color--secondary);
-  outline: 3px solid var(--color--secondary);
+  outline: 2px solid var(--color--secondary);
 }
 
 .btn-primary-outline {
-  outline: 3px solid var(--color--primary);
+  outline: 2px solid var(--color--primary);
   color: var(--color--primary);
   transition: background-color 200ms , outline 200ms ;
 }
 
 .btn-primary-outline:hover {
-  background: var(--color--secondary);
-  outline: 3px solid var(--color--secondary);
+  background: var(--color--primary);
+  outline: 2px solid var(--color--primary);
+  color: var(--color--light);
 }
 
 .btn-light {
-  outline: 3px solid var(--color--light);
+  outline: 2px solid var(--color--light);
 }
 
 /*
  NAVIGATION =========================================
 */
 
-.nav {
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -207,9 +177,15 @@ IMAGES =========================================
 }
 
 
+.nav-wrapper.is-open .nav-link.btn {
+  outline: 2px solid var(--color--light);
+}
+.nav-link.btn {
+  outline: 2px solid var(--color--secondary);
+}
 
 .nav-link {
-  padding: 15px 30px;
+  padding: 10px 30px;
   text-decoration: none;
   color: var(--color--light);
   font-size: 14px;
@@ -229,6 +205,12 @@ GENERAL =========================================
 
 
 .title-1 {
+  font-family: var(--ff-serif);
+  font-weight: 400;
+  font-size: clamp(2.25rem, 5vw, 3.5625rem);
+}
+
+.title-2 {
   font-size: clamp(2.25rem, 5vw, 2.8125rem);
   font-family: var(--ff-serif);
   font-weight: 400;
@@ -239,36 +221,32 @@ HERO =========================================
 */
 
 
-.hero--content, .hero--image {
+.hero-content, .hero-image {
   margin: 2rem 0;
 }
 
-.hero--cta {
+.hero-cta {
   display: flex;
   justify-content: center;
 }
 
-.hero--cta > .btn {
+.hero-cta > .btn {
   margin-right: 1rem;
 }
 
-.hero--title {
-  font-family: var(--ff-serif);
+.hero-content__title {
   color: var(--color--secondary);
-  text-align: center;
-  font-weight: 400;
-  font-size: clamp(2.25rem, 5vw, 3.5625rem);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 
-.hero--subtitle {
+.hero-content__subtitle {
   font-family: var(--ff-sans-serif);
   color: var(--color--secondary);
   font-size: clamp(1.25rem, 5vw, 1.5625rem);
   text-align: center;
   font-weight: 400;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 
@@ -304,13 +282,13 @@ MAIN =========================================
   margin-bottom: 1rem;
 }
 
-.hero--image {
+.hero-image {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.hero--image > img {
+.hero-image__img {
   max-width: 460px;
   min-width: 254px;
   width: min(50%,460px);
@@ -458,7 +436,7 @@ FOOTER =========================================
 
 .footerSocials-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .footer-bottom {
@@ -477,9 +455,9 @@ FOOTER =========================================
 MEDIA 1024 =========================================
 */
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   :root {
-    --container-width: 1004px;
+    --container-width: 1260px;
   }
 
   .btn-wrapper {
@@ -487,11 +465,11 @@ MEDIA 1024 =========================================
   }
 
 
-  .hero--title {
+  .hero-content__title {
     text-align: left;
   }
 
-  .hero--subtitle {
+  .hero-content__subtitle {
     text-align: left;
   }
 
@@ -518,7 +496,7 @@ MEDIA 1024 =========================================
     margin-bottom: 0;
   }
 
-  .nav-item > .mobile-item {
+  .mobile-item {
     display: none;
   }
 
@@ -636,13 +614,17 @@ MEDIA 1024 =========================================
     text-align: left;
   }
 
+  .footerSocials-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
 
   .btn {
-    padding: 20px 40px;
     font-size: .875rem;
   }
 
-  .hero--cta {
+  .hero-cta {
     justify-content: flex-start;
   }
 }
