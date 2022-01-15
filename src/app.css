@@ -147,6 +147,7 @@ IMAGES =========================================
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-block : .5rem;
 }
 
 .logo-wrapper {
