@@ -2,12 +2,8 @@
   "name": "botanic",
   "version": "1.0.0",
   "description": "",
+  "main": "src/index.js",
   "source": "src/index.html",
-  "targets": {
-    "default": {
-      "distDir": "."
-    }
-  },
   "scripts": {
     "start": "parcel",
     "build": "parcel build src/index.html"
