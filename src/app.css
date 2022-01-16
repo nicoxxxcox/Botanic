@@ -18,7 +18,7 @@
  =========================================
 */
 
-*,*::before, *::after {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -30,14 +30,14 @@ li {
 
 a {
   text-decoration: none;
-  font : inherit;
+  font: inherit;
 }
 
 img {
   display: block;
 }
 
-body,* {
+body, * {
   font-family: var(--ff-sans-serif);
 }
 
@@ -305,7 +305,7 @@ MAIN =========================================
   text-align: center;
   font-weight: 400;
   font-size: clamp(1rem, 5vw, 1.25rem);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .hero-image {
@@ -435,10 +435,21 @@ FOOTER =========================================
   text-align: center;
 }
 
-.sitemap--item {
+.sitemap-item {
   color: var(--color--light);
   font-size: .875rem;
   margin-bottom: .7rem;
+}
+
+.sitemap-item__link {
+  text-decoration: none;
+  color: var(--color--light);
+  transition: color 300ms ease-in-out;
+}
+
+.sitemap-item__link:hover {
+  text-decoration: none;
+  color: #aaa;
 }
 
 .sitemap--title {
@@ -578,15 +589,14 @@ MEDIA 1024 =========================================
     grid-column: span 4;
   }
 
-
   .blog--title {
     text-align: left;
   }
 
-
   .blog-card {
     display: grid;
     grid-gap: 1rem;
+    margin-bottom: 0;
   }
 
   .blog-card:not(.featured):not(:last-child) {
@@ -609,7 +619,6 @@ MEDIA 1024 =========================================
   .blog-card:not(.featured) {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-column: span 2;
-    margin-bottom: 1rem;
   }
 
   .blog-card:not(.featured) .blog-image-wrapper {
