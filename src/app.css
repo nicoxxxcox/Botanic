@@ -11,6 +11,32 @@
   --container-width: calc(100vw - var(--container-padding) * 2);
 }
 
+
+/*
+==========================================
+ RESET ===================================
+ =========================================
+*/
+
+*,*::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font : inherit;
+}
+
+img {
+  display: block;
+}
+
 body,* {
   font-family: var(--ff-sans-serif);
 }
